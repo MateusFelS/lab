@@ -120,48 +120,48 @@ const Details: React.FC = () => {
           />
         </div>
 
-        <p className="text-base sm:text-lg mb-3 sm:mb-4">
-          <strong>Descrição:</strong> {servico.descricao}
-        </p>
-
-        {/* Como é feito */}
-        <div className="mb-4 sm:mb-6">
-          <h3 className="text-lg sm:text-xl font-semibold">Como é feito?</h3>
-          <ul className="mt-3 list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg text-[#1b365d]">
-            {servico.preparo
-              .split('.')
-              .map(frase => frase.trim())
-              .filter(frase => frase.length > 0)
-              .map((frase, idx) => (
-                <li key={idx}>{frase}.</li>
-              ))}
-          </ul>
-        </div>
+         {/* Descrição */}
+          <p className="text-base sm:text-lg mb-3 sm:mb-4 text-[#1b365d]">
+            <strong>Descrição:</strong> {servico.descricao}
+          </p>
         
-        {/* O que o exame revela */}
-        <div className="mb-4 sm:mb-6">
-          <h3 className="text-lg sm:text-xl font-semibold">O que o exame revela?</h3>
-          <ul className="mt-3 list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg text-[#1b365d]">
-            {servico.duracaoResultado
-              .split('.')
-              .map(frase => frase.trim())
-              .filter(frase => frase.length > 0)
-              .map((frase, idx) => (
-                <li key={idx}>{frase}.</li>
+          {/* Como é feito */}
+          <div className="mb-4 sm:mb-6">
+            <h3 className="text-lg sm:text-xl font-semibold text-[#1b365d]">Como é feito?</h3>
+            <ul className="mt-3 list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg text-[#1b365d]">
+              {servico.preparo
+                .split('.')
+                .map(frase => frase.trim())
+                .filter(frase => frase.length > 0)
+                .map((frase, idx) => (
+                  <li key={idx}>{frase}.</li>
+                ))}
+            </ul>
+          </div>
+        
+          {/* O que o exame revela */}
+          <div className="mb-4 sm:mb-6">
+            <h3 className="text-lg sm:text-xl font-semibold text-[#1b365d]">O que o exame revela?</h3>
+            <ul className="mt-3 list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg text-[#1b365d]">
+              {servico.duracaoResultado
+                .split('.')
+                .map(frase => frase.trim())
+                .filter(frase => frase.length > 0)
+                .map((frase, idx) => (
+                  <li key={idx}>{frase}.</li>
+                ))}
+            </ul>
+          </div>
+        
+          {/* Para quem é recomendado */}
+          <div className="mb-4 sm:mb-6">
+            <h3 className="text-base sm:text-lg font-semibold text-[#1b365d]">Para quem é recomendado?</h3>
+            <ul className="mt-3 list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg text-[#1b365d]">
+              {servico.indicacoes.map((item, idx) => (
+                <li key={idx}>{item}</li>
               ))}
-          </ul>
-        </div>
-
-
-        {/* Para quem é recomendado */}
-        <div className="mb-4 sm:mb-6">
-          <h3 className="text-base sm:text-lg font-semibold">Para quem é recomendado?</h3>
-          <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg">
-            {servico.indicacoes.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
-        </div>
+            </ul>
+          </div>
 
         <Link to={`/checkout/${servicoId}`}>
           <button className="mt-6 sm:mt-8 w-full bg-[#2a3d66] text-white font-semibold text-sm sm:text-base py-2 rounded-md hover:bg-[#24355a] transition duration-300">
