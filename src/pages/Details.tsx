@@ -20,7 +20,78 @@ interface Details {
 }
 
 const servicos: Details[] = [
-  // ... seus serviços aqui (sem alterações nos dados)
+  {
+    id: '1',
+    nome: 'Check-up Genético Neonatal',
+    descricao: 'Exame ideal para recém-nascidos até 1 ano de vida, que detecta mais de 300 doenças genéticas raras, metabólicas, hormonais e imunológicas.',
+    preparo: 'Recomenda-se realizar nas primeiras semanas de vida.',
+    duracaoResultado: 'Laudo claro com orientação de geneticista pediátrico.',
+    indicacoes: ['Triagem neonatal ampliada', 'Suspeita de doenças genéticas ou metabólicas', 'Histórico familiar relevante'],
+    imagem: IMAGEM_UM,
+  },
+  {
+    id: '2',
+    nome: 'Check-up Essencial da Infância',
+    descricao: 'Avaliação da saúde geral e do funcionamento dos órgãos através de componentes sanguíneos.',
+    preparo: 'Geralmente, jejum de 8 a 12 horas.',
+    duracaoResultado: 'Relatório com contagem de células sanguíneas, níveis de glicose e minerais.',
+    indicacoes: ['Check-up pediátrico de rotina', 'Investigação de infecções ou anemia'],
+    imagem: IMAGEM_DOIS,
+  },
+  {
+    id: '3',
+    nome: 'Investigação da saúde interna',
+    descricao: 'Análise de amostras biológicas para investigar a saúde do sistema urinário e intestinal.',
+    preparo: 'Coleta de amostras em recipiente específico, conforme orientação do laboratório.',
+    duracaoResultado: 'Identificação de infecções urinárias, parasitas e outros microrganismos.',
+    indicacoes: ['Suspeita de infecção urinária', 'Sintomas intestinais (diarreia, dor abdominal)'],
+    imagem: IMAGEM_TRES,
+  },
+  {
+    id: '4',
+    nome: 'Mapa de cromossomos',
+    descricao: 'Estudo do número e estrutura dos cromossomos para identificar alterações genéticas.',
+    preparo: 'Coleta de sangue ou outro material biológico, sem preparo especial.',
+    duracaoResultado: 'Confirmação ou exclusão de síndromes cromossômicas como Down, Turner, Klinefelter, etc.',
+    indicacoes: ['Suspeita de síndromes genéticas', 'Atraso no desenvolvimento', 'Abortos de repetição na família'],
+    imagem: IMAGEM_QUATRO,
+  },
+  {
+    id: '5',
+    nome: 'Farmacogenética Inteligente',
+    descricao: 'Análise genética que estuda como o DNA influencia a resposta do organismo a medicamentos.',
+    preparo: 'Coleta de saliva ou esfregaço bucal, sem preparo especial.',
+    duracaoResultado: 'Relatório indicando a eficácia e o risco de efeitos colaterais de diferentes medicamentos para o paciente.',
+    indicacoes: ['Personalização de tratamento', 'Otimização de doses', 'Pacientes com efeitos adversos a medicamentos comuns'],
+    imagem: IMAGEM_CINCO,
+  },
+  {
+    id: '6',
+    nome: 'Análise Genética para TEA e Atrasos',
+    descricao: 'Investiga variantes genéticas associadas ao Transtorno do Espectro Autista (TEA) e a atrasos no desenvolvimento.',
+    preparo: 'Coleta de sangue ou saliva, sem preparo especial.',
+    duracaoResultado: 'Identificação de possíveis causas genéticas para o quadro clínico, auxiliando no diagnóstico e tratamento.',
+    indicacoes: ['Suspeita clínica de TEA', 'Atraso de desenvolvimento neuropsicomotor', 'Histórico familiar das condições'],
+    imagem: IMAGEM_SEIS,
+  },
+  {
+    id: '7',
+    nome: 'Defesas do pequeno',
+    descricao: 'Avaliação do sistema imunológico da criança, que é a defesa natural do corpo.',
+    preparo: 'Exame de sangue, geralmente com jejum de 8 horas.',
+    duracaoResultado: 'Informa sobre células de defesa, marcadores de inflamação e presença de anticorpos.',
+    indicacoes: ['Crianças com infecções frequentes', 'Baixa imunidade', 'Acompanhamento preventivo'],
+    imagem: IMAGEM_SETE,
+  },
+  {
+    id: '8',
+    nome: 'Check-up Metabólico Infantil',
+    descricao: 'Análise de hormônios e marcadores para entender o crescimento e o processamento de energia da criança.',
+    preparo: 'Exame de sangue, que exige jejum de 8 a 12 horas.',
+    duracaoResultado: 'Mede hormônios de crescimento e tireoide, além de glicose e perfil lipídico.',
+    indicacoes: ['Atraso no crescimento', 'Alterações de peso', 'Suspeita de distúrbios hormonais'],
+    imagem: IMAGEM_OITO,
+  }
 ];
 
 const Details: React.FC = () => {
