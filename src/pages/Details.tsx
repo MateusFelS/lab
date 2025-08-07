@@ -121,14 +121,14 @@ const Details: React.FC = () => {
         </div>
 
          {/* Descrição */}
-          <p className="text-base sm:text-lg mb-3 sm:mb-4 text-[#1b365d]">
+          <p className="text-base sm:text-lg mb-3 sm:mb-4 text-gray-600">
             <strong>Descrição:</strong> {servico.descricao}
           </p>
         
           {/* Como é feito */}
           <div className="mb-4 sm:mb-6">
             <h3 className="text-lg sm:text-xl font-semibold text-[#1b365d]">Como é feito?</h3>
-            <ul className="mt-3 list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg text-[#1b365d]">
+            <ul className="mt-3 list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg text-gray-600">
               {servico.preparo
                 .split('.')
                 .map(frase => frase.trim())
@@ -142,7 +142,7 @@ const Details: React.FC = () => {
           {/* O que o exame revela */}
           <div className="mb-4 sm:mb-6">
             <h3 className="text-lg sm:text-xl font-semibold text-[#1b365d]">O que o exame revela?</h3>
-            <ul className="mt-3 list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg text-[#1b365d]">
+            <ul className="mt-3 list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg text-gray-600">
               {servico.duracaoResultado
                 .split('.')
                 .map(frase => frase.trim())
@@ -156,7 +156,7 @@ const Details: React.FC = () => {
           {/* Para quem é recomendado */}
           <div className="mb-4 sm:mb-6">
             <h3 className="text-base sm:text-lg font-semibold text-[#1b365d]">Para quem é recomendado?</h3>
-            <ul className="mt-3 list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg text-[#1b365d]">
+            <ul className="mt-3 list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg text-gray-600">
               {servico.indicacoes.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
