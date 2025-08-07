@@ -1,6 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import LOGO from '../assets/images/logo.png';
+import PDF from '../assets/resultado.pdf';
 
 interface FormData {
   nome: string;
@@ -27,10 +28,22 @@ const ConsultaResultado = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert(`Consulta enviada:
-Nome do Paciente: ${formData.nome}
-Data de Nascimento: ${formData.nascimento}
-Número do Protocolo: ${formData.protocolo}`);
+
+    const nomeCorreto = "Laura Emanuelle Alves Silva";
+    const nascimentoCorreto = "2025-07-26";
+    const protocoloCorreto = "ABC1234";
+
+    const nomeValido = formData.nome.trim().toLowerCase() === nomeCorreto.toLowerCase();
+    const nascimentoValido = formData.nascimento === nascimentoCorreto;
+    const protocoloValido = formData.protocolo.trim().toUpperCase() === protocoloCorreto;
+
+    if (nomeValido && nascimentoValido && protocoloValido) {
+      // Abrir o PDF na mesma aba
+      window.location.href = PDF;
+    } else {
+      alert("Dados não encontrados. Verifique as informações inseridas.");
+    }
+
     setFormData({
       nome: '',
       nascimento: '',
@@ -39,10 +52,9 @@ Número do Protocolo: ${formData.protocolo}`);
   };
 
   return (
-    <div
-      className="min-h-screen flex flex-col justify-center items-center px-4 py-6 sm:px-8 bg-[#e6f0fa] text-[#1b365d]"
-    >
+    <div className="min-h-screen flex flex-col justify-center items-center px-4 py-6 sm:px-8 bg-[#e6f0fa] text-[#1b365d]">
       <div className="bg-white shadow-lg rounded-lg p-4 sm:p-6 w-full max-w-2xl">
+        
         {/* Botão Voltar */}
         <Link
           to="/"
@@ -99,7 +111,7 @@ Número do Protocolo: ${formData.protocolo}`);
             <input
               type="text"
               id="protocolo"
-              placeholder="Ex: 123456789"
+              placeholder="Ex: ABC1234"
               value={formData.protocolo}
               onChange={handleChange}
               required
