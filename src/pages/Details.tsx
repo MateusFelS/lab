@@ -127,27 +127,18 @@ const Details: React.FC = () => {
         {/* Como é feito */}
         <div className="mb-4 sm:mb-6">
           <h3 className="text-lg sm:text-xl font-semibold">Como é feito?</h3>
-          <p className="text-sm sm:text-base text-gray-600 mb-1">
-            Entenda o tipo de coleta e se há necessidade de preparo.
-          </p>
           <p className="text-base sm:text-lg">{servico.preparo}</p>
         </div>
 
         {/* O que o exame revela */}
         <div className="mb-4 sm:mb-6">
           <h3 className="text-lg sm:text-xl font-semibold">O que o exame revela?</h3>
-          <p className="text-sm sm:text-base text-gray-600 mb-1">
-            Veja quais informações ou diagnósticos podem ser obtidos com este exame.
-          </p>
           <p className="text-base sm:text-lg">{servico.duracaoResultado}</p>
         </div>
 
         {/* Para quem é recomendado */}
         <div className="mb-4 sm:mb-6">
           <h3 className="text-base sm:text-lg font-semibold">Para quem é recomendado?</h3>
-          <p className="text-sm sm:text-base text-gray-600 mb-1">
-            Casos ou situações em que este exame pode ser útil.
-          </p>
           <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg">
             {servico.indicacoes.map((item, idx) => (
               <li key={idx}>{item}</li>
