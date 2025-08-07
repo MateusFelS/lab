@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Placeholder from '../assets/images/placeholder.png';
 import IMAGEM_UM from '../assets/services/1.png';
 import IMAGEM_DOIS from '../assets/services/2.png';
 import IMAGEM_TRES from '../assets/services/3.png';
