@@ -1,7 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import LOGO from '../assets/images/logo.png';
-import PDF from '../assets/resultado.pdf';
+import RESULTADO_IMG from '../assets/resultado.png';
 
 interface FormData {
   nome: string;
@@ -16,9 +16,9 @@ const ConsultaResultado = () => {
     protocolo: '',
   });
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement>
-  ) => {
+  const [mostrarResultado, setMostrarResultado] = useState(false); // estado para abrir o modal
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -38,8 +38,7 @@ const ConsultaResultado = () => {
     const protocoloValido = formData.protocolo.trim().toUpperCase() === protocoloCorreto;
 
     if (nomeValido && nascimentoValido && protocoloValido) {
-      // Abrir o PDF na mesma aba
-      window.location.href = PDF;
+      setMostrarResultado(true); // mostrar modal
     } else {
       alert("Dados não encontrados. Verifique as informações inseridas.");
     }
@@ -54,8 +53,6 @@ const ConsultaResultado = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center px-4 py-6 sm:px-8 bg-[#e6f0fa] text-[#1b365d]">
       <div className="bg-white shadow-lg rounded-lg p-4 sm:p-6 w-full max-w-2xl">
-        
-        {/* Botão Voltar */}
         <Link
           to="/"
           className="text-lg sm:text-2xl font-bold hover:underline mb-4 inline-block"
@@ -63,18 +60,16 @@ const ConsultaResultado = () => {
           &larr; Voltar
         </Link>
 
-        {/* Título */}
         <h1 className="text-2xl sm:text-4xl font-bold text-center mb-6">
           Consultar Resultado de Exame
         </h1>
 
-        {/* Logo */}
         <div className="flex justify-center mb-2">
           <img src={LOGO} alt="Logo" className="h-24 sm:h-60 object-contain" />
         </div>
 
-        {/* Formulário */}
         <form onSubmit={handleSubmit}>
+          {/* inputs iguais */}
           <div className="mb-4">
             <label htmlFor="nome" className="block font-bold mb-2">
               Nome do Paciente
@@ -82,7 +77,6 @@ const ConsultaResultado = () => {
             <input
               type="text"
               id="nome"
-              placeholder="Digite o nome completo"
               value={formData.nome}
               onChange={handleChange}
               required
@@ -111,7 +105,6 @@ const ConsultaResultado = () => {
             <input
               type="text"
               id="protocolo"
-              placeholder="Ex: ABC1234"
               value={formData.protocolo}
               onChange={handleChange}
               required
@@ -127,6 +120,25 @@ const ConsultaResultado = () => {
           </button>
         </form>
       </div>
+
+      {/* Modal com imagem */}
+      {mostrarResultado && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
+          <div className="relative bg-white p-4 rounded-lg max-w-3xl w-full">
+            <button
+              onClick={() => setMostrarResultado(false)}
+              className="absolute top-2 right-2 text-gray-700 hover:text-black text-2xl font-bold"
+            >
+              &times;
+            </button>
+            <img
+              src={RESULTADO_IMG}
+              alt="Resultado do exame"
+              className="w-full h-auto rounded"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
