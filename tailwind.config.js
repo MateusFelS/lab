@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        cursiveTitle: ['Great Vibes', 'cursive'],
+        sansSubtitle: ['Poppins', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

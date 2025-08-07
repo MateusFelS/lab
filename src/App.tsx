@@ -1,13 +1,14 @@
 import Main from "./pages/Main";
 import Slidenav from "./components/Slidenav";
-import Destination from "./pages/Destination";
+import Services from "./pages/Services";
 import { Divider } from "@mui/material";
 import AboutUs from "./pages/AboutUs";
 import Contacts from "./pages/Contacts";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import CountryDetails from "./pages/Details";
+import Details from "./pages/Details";  
+import Checkout from './pages/CheckoutForm';  
 import Footer from "./components/Footer";
-import Checkout from "./pages/CheckoutForm";
+import ConsultaResultado from "./pages/Results";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
             <>
               <Slidenav />
               <Main />
-              <Destination />
+              <Services />
               <Divider sx={{
                 borderBottomWidth: '2px', 
                 borderColor: 'black'
@@ -28,8 +29,10 @@ function App() {
               <Footer />  
             </>
           } />
-          <Route path="/country/:countryId" element={<CountryDetails />} />
-          <Route path="/checkout/:countryId" element={<Checkout />} />
+
+          <Route path="/servico/:servicoId" element={<Details />} />
+          <Route path="/checkout/:servicoId" element={<Checkout />} />
+          <Route path="/consultar-resultado" element={<ConsultaResultado />} />
         </Routes>
       </div>
     </Router>
