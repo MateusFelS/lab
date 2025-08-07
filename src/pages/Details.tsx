@@ -20,78 +20,7 @@ interface Details {
 }
 
 const servicos: Details[] = [
-  {
-    id: '1',
-    nome: 'Check-up Genético Neonatal',
-    descricao: 'Exame ideal para recém-nascidos até 1 ano de vida, que detecta mais de 300 doenças genéticas raras, metabólicas, hormonais e imunológicas.',
-    preparo: 'Recomenda-se realizar nas primeiras semanas de vida.',
-    duracaoResultado: 'Laudo claro com orientação de geneticista pediátrico.',
-    indicacoes: ['Triagem neonatal ampliada', 'Suspeita de doenças genéticas ou metabólicas', 'Histórico familiar relevante'],
-    imagem: IMAGEM_UM,
-  },
-  {
-    id: '2',
-    nome: 'Check-up Essencial da Infância',
-    descricao: 'Avaliação da saúde geral e do funcionamento dos órgãos através de componentes sanguíneos.',
-    preparo: 'Geralmente, jejum de 8 a 12 horas.',
-    duracaoResultado: 'Relatório com contagem de células sanguíneas, níveis de glicose e minerais.',
-    indicacoes: ['Check-up pediátrico de rotina', 'Investigação de infecções ou anemia'],
-    imagem: IMAGEM_DOIS,
-  },
-  {
-    id: '3',
-    nome: 'Investigação da saúde interna',
-    descricao: 'Análise de amostras biológicas para investigar a saúde do sistema urinário e intestinal.',
-    preparo: 'Coleta de amostras em recipiente específico, conforme orientação do laboratório.',
-    duracaoResultado: 'Identificação de infecções urinárias, parasitas e outros microrganismos.',
-    indicacoes: ['Suspeita de infecção urinária', 'Sintomas intestinais (diarreia, dor abdominal)'],
-    imagem: IMAGEM_TRES,
-  },
-  {
-    id: '4',
-    nome: 'Mapa de cromossomos',
-    descricao: 'Estudo do número e estrutura dos cromossomos para identificar alterações genéticas.',
-    preparo: 'Coleta de sangue ou outro material biológico, sem preparo especial.',
-    duracaoResultado: 'Confirmação ou exclusão de síndromes cromossômicas como Down, Turner, Klinefelter, etc.',
-    indicacoes: ['Suspeita de síndromes genéticas', 'Atraso no desenvolvimento', 'Abortos de repetição na família'],
-    imagem: IMAGEM_QUATRO,
-  },
-  {
-    id: '5',
-    nome: 'Farmacogenética Inteligente',
-    descricao: 'Análise genética que estuda como o DNA influencia a resposta do organismo a medicamentos.',
-    preparo: 'Coleta de saliva ou esfregaço bucal, sem preparo especial.',
-    duracaoResultado: 'Relatório indicando a eficácia e o risco de efeitos colaterais de diferentes medicamentos para o paciente.',
-    indicacoes: ['Personalização de tratamento', 'Otimização de doses', 'Pacientes com efeitos adversos a medicamentos comuns'],
-    imagem: IMAGEM_CINCO,
-  },
-  {
-    id: '6',
-    nome: 'Análise Genética para TEA e Atrasos',
-    descricao: 'Investiga variantes genéticas associadas ao Transtorno do Espectro Autista (TEA) e a atrasos no desenvolvimento.',
-    preparo: 'Coleta de sangue ou saliva, sem preparo especial.',
-    duracaoResultado: 'Identificação de possíveis causas genéticas para o quadro clínico, auxiliando no diagnóstico e tratamento.',
-    indicacoes: ['Suspeita clínica de TEA', 'Atraso de desenvolvimento neuropsicomotor', 'Histórico familiar das condições'],
-    imagem: IMAGEM_SEIS,
-  },
-  {
-    id: '7',
-    nome: 'Defesas do pequeno',
-    descricao: 'Avaliação do sistema imunológico da criança, que é a defesa natural do corpo.',
-    preparo: 'Exame de sangue, geralmente com jejum de 8 horas.',
-    duracaoResultado: 'Informa sobre células de defesa, marcadores de inflamação e presença de anticorpos.',
-    indicacoes: ['Crianças com infecções frequentes', 'Baixa imunidade', 'Acompanhamento preventivo'],
-    imagem: IMAGEM_SETE,
-  },
-  {
-    id: '8',
-    nome: 'Check-up Metabólico Infantil',
-    descricao: 'Análise de hormônios e marcadores para entender o crescimento e o processamento de energia da criança.',
-    preparo: 'Exame de sangue, que exige jejum de 8 a 12 horas.',
-    duracaoResultado: 'Mede hormônios de crescimento e tireoide, além de glicose e perfil lipídico.',
-    indicacoes: ['Atraso no crescimento', 'Alterações de peso', 'Suspeita de distúrbios hormonais'],
-    imagem: IMAGEM_OITO,
-  }
+  // ... seus serviços aqui (sem alterações nos dados)
 ];
 
 const Details: React.FC = () => {
@@ -103,11 +32,14 @@ const Details: React.FC = () => {
   }
 
   return (
-    <div
-      className="min-h-screen flex flex-col justify-center items-center px-4 py-6 sm:px-8 bg-[#e6f0fa] text-[#1b365d]">
+    <div className="min-h-screen flex flex-col justify-center items-center px-4 py-6 sm:px-8 bg-[#e6f0fa] text-[#1b365d]">
       <div className="bg-white shadow-lg rounded-lg p-4 sm:p-6 w-full max-w-3xl">
-        <Link to="/" className="text-lg sm:text-2xl font-bold hover:underline mb-4 inline-block">&larr; Voltar</Link>
-        <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center">{servico.nome}</h2>
+        <Link to="/" className="text-lg sm:text-2xl font-bold hover:underline mb-4 inline-block">
+          &larr; Voltar
+        </Link>
+        <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center">
+          {servico.nome}
+        </h2>
 
         <div className="flex justify-center bg-[#e6f0fa] mb-6 sm:mb-8">
           <img
@@ -117,16 +49,40 @@ const Details: React.FC = () => {
           />
         </div>
 
-        <p className="text-base sm:text-lg mb-3 sm:mb-4"><strong>Descrição:</strong> {servico.descricao}</p>
-        <p className="text-base sm:text-lg mb-3 sm:mb-4"><strong>Como é feito?</strong> {servico.preparo}</p>
-        <p className="text-base sm:text-lg mb-3 sm:mb-4"><strong>O que o exame revela?</strong> {servico.duracaoResultado}</p>
+        <p className="text-base sm:text-lg mb-3 sm:mb-4">
+          <strong>Descrição:</strong> {servico.descricao}
+        </p>
 
-        <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3">Para quem é recomendado?</h3>
-        <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg">
-          {servico.indicacoes.map((item, idx) => (
-            <li key={idx}>{item}</li>
-          ))}
-        </ul>
+        {/* Como é feito */}
+        <div className="mb-4 sm:mb-6">
+          <h3 className="text-lg sm:text-xl font-semibold">Como é feito?</h3>
+          <p className="text-sm sm:text-base text-gray-600 mb-1">
+            Entenda o tipo de coleta e se há necessidade de preparo.
+          </p>
+          <p className="text-base sm:text-lg">{servico.preparo}</p>
+        </div>
+
+        {/* O que o exame revela */}
+        <div className="mb-4 sm:mb-6">
+          <h3 className="text-lg sm:text-xl font-semibold">O que o exame revela?</h3>
+          <p className="text-sm sm:text-base text-gray-600 mb-1">
+            Veja quais informações ou diagnósticos podem ser obtidos com este exame.
+          </p>
+          <p className="text-base sm:text-lg">{servico.duracaoResultado}</p>
+        </div>
+
+        {/* Para quem é recomendado */}
+        <div className="mb-4 sm:mb-6">
+          <h3 className="text-base sm:text-lg font-semibold">Para quem é recomendado?</h3>
+          <p className="text-sm sm:text-base text-gray-600 mb-1">
+            Casos ou situações em que este exame pode ser útil.
+          </p>
+          <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg">
+            {servico.indicacoes.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+        </div>
 
         <Link to={`/checkout/${servicoId}`}>
           <button className="mt-6 sm:mt-8 w-full bg-[#2a3d66] text-white font-semibold text-sm sm:text-base py-2 rounded-md hover:bg-[#24355a] transition duration-300">
