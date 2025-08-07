@@ -103,7 +103,8 @@ const Details: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center px-4 py-6 sm:px-8 bg-[#e6f0fa] text-[#1b365d]">
+    <div
+      className="min-h-screen flex flex-col justify-center items-center px-4 py-6 sm:px-8 bg-[#e6f0fa] text-[#1b365d]">
       <div className="bg-white shadow-lg rounded-lg p-4 sm:p-6 w-full max-w-3xl">
         <Link to="/" className="text-lg sm:text-2xl font-bold hover:underline mb-4 inline-block">&larr; Voltar</Link>
         <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center">{servico.nome}</h2>
@@ -117,10 +118,10 @@ const Details: React.FC = () => {
         </div>
 
         <p className="text-base sm:text-lg mb-3 sm:mb-4"><strong>Descrição:</strong> {servico.descricao}</p>
-        <p className="text-base sm:text-lg mb-3 sm:mb-4"><strong>Como é feito o exame?</strong> {servico.preparo}</p>
-        <p className="text-base sm:text-lg mb-3 sm:mb-4"><strong>O que o resultado mostra?</strong> {servico.duracaoResultado}</p>
+        <p className="text-base sm:text-lg mb-3 sm:mb-4"><strong>Como é feito?</strong> {servico.preparo}</p>
+        <p className="text-base sm:text-lg mb-3 sm:mb-4"><strong>O que o exame revela?</strong> {servico.duracaoResultado}</p>
 
-        <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3">Quando é indicado?</h3>
+        <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3">Para quem é recomendado?</h3>
         <ul className="list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg">
           {servico.indicacoes.map((item, idx) => (
             <li key={idx}>{item}</li>
@@ -128,4 +129,13 @@ const Details: React.FC = () => {
         </ul>
 
         <Link to={`/checkout/${servicoId}`}>
-          <button
+          <button className="mt-6 sm:mt-8 w-full bg-[#2a3d66] text-white font-semibold text-sm sm:text-base py-2 rounded-md hover:bg-[#24355a] transition duration-300">
+            Agendar Exame
+          </button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default Details;
