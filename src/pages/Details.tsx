@@ -127,14 +127,31 @@ const Details: React.FC = () => {
         {/* Como é feito */}
         <div className="mb-4 sm:mb-6">
           <h3 className="text-lg sm:text-xl font-semibold">Como é feito?</h3>
-          <p className="text-base sm:text-lg">{servico.preparo}</p>
+          <ul className="mt-3 list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg text-[#1b365d]">
+            {servico.preparo
+              .split('.')
+              .map(frase => frase.trim())
+              .filter(frase => frase.length > 0)
+              .map((frase, idx) => (
+                <li key={idx}>{frase}.</li>
+              ))}
+          </ul>
         </div>
-
+        
         {/* O que o exame revela */}
         <div className="mb-4 sm:mb-6">
           <h3 className="text-lg sm:text-xl font-semibold">O que o exame revela?</h3>
-          <p className="text-base sm:text-lg">{servico.duracaoResultado}</p>
+          <ul className="mt-3 list-disc list-inside space-y-1 sm:space-y-2 text-base sm:text-lg text-[#1b365d]">
+            {servico.duracaoResultado
+              .split('.')
+              .map(frase => frase.trim())
+              .filter(frase => frase.length > 0)
+              .map((frase, idx) => (
+                <li key={idx}>{frase}.</li>
+              ))}
+          </ul>
         </div>
+
 
         {/* Para quem é recomendado */}
         <div className="mb-4 sm:mb-6">
