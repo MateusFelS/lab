@@ -1,4 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
+import { FaEnvelope, FaInstagram } from 'react-icons/fa';
 
 interface FormData {
   nome: string;
@@ -50,7 +51,8 @@ const ContactUs = () => {
           Entre em contato conosco para mais informações sobre nossos serviços laboratoriais infantis. Estamos aqui para garantir o melhor cuidado para as crianças da sua família!
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[#2a3d66] mb-8">
+        {/* Contatos visuais */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-[#2a3d66] mb-8">
           <div>
             <h2 className="text-xl sm:text-2xl font-bold mb-2">Endereço</h2>
             <p className="text-sm sm:text-base">Rua Lírio Brant – Melo</p>
@@ -66,10 +68,26 @@ const ContactUs = () => {
           </div>
           <div>
             <h2 className="text-xl sm:text-2xl font-bold mb-2">Email</h2>
-            <p className="text-sm sm:text-base">infolepetitgene@gmail.com</p>
+            <div className="flex items-center space-x-2">
+              <FaEnvelope size={20} color="gray" />
+              <span className="text-sm sm:text-base">infolepetitgene@gmail.com</span>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-xl sm:text-2xl font-bold mb-2">Instagram</h2>
+            <a
+              href="https://www.instagram.com/_lepetitgene"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:underline"
+            >
+              <FaInstagram size={22} color="#E1306C" />
+              <span className="text-sm sm:text-base">@_lepetitgene</span>
+            </a>
           </div>
         </div>
 
+        {/* Formulário */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
           <div>
             <label className="block font-bold mb-2" htmlFor="nome">
